@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1, "task" : "Mock data in JSON"
+  },
+  {
+    "id": 2, "task" : "Do communication module with JSON file"
+  }
+]
