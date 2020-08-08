@@ -46,21 +46,32 @@ const handleData = (type, task) =>{
         }
     }
 
+    let dataJSON = "";
     switch(type){
         case 1:
-            console.log('Dodaję zadanie'.green)
             const id = tasks.length + 1;
             tasks.push({
                 id, task
             });
-            const dataJSON = JSON.stringify(tasks);
+            dataJSON = JSON.stringify(tasks);
             fs.writeFileSync('./taskdb.json', dataJSON)
+            console.log(`Dodaję zadanie: ${task}`.black.bgGreen)
             break;
         case 2:
-            console.log('Usuwam zadanie'.green)
+            const index = tasks.findIndex(item=> item.task === task);
+            tasks.splice(index,1);
+            dataJSON = JSON.stringify(tasks);
+            fs.writeFileSync('./taskdb.json', dataJSON)
+            console.log(`Usuwam zadanie: ${task}`.black.bgGreen)
             break;
         case 3:
-            console.log('Pokazuję listę'.green)
+            console.log('Twoja lista zadań:'.green)
+            if(tasks.length > 0 ){
+                tasks.forEach( (task, index) => {
+                    if( index % 2) return console.log(task.task.green)
+                    return console.log(task.task.yellow)
+                })
+            }
             break;
     }
 
