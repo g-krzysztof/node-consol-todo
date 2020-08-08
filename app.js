@@ -49,7 +49,10 @@ const handleData = (type, task) =>{
     let dataJSON = "";
     switch(type){
         case 1:
-            const id = tasks.length + 1;
+            tasks.map((item, index) => {
+                item.id = index;
+            });
+            const id = tasks.length;
             tasks.push({
                 id, task
             });
