@@ -1,8 +1,1 @@
-[
-  {
-    "id": 1, "task" : "Mock data in JSON"
-  },
-  {
-    "id": 2, "task" : "Do communication module with JSON file"
-  }
-]
+[{"id":1,"task":"Mock data in JSON"},{"id":2,"task":"Do communication module with JSON file"},{"id":3,"task":"Task added from console"}]
